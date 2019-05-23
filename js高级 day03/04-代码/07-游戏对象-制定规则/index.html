@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+
+    #map {
+      width: 200px;
+      height: 200px;
+      background-color: #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <button>开始游戏</button>
+  <div id="map"></div>
+
+  <script src="./food.js"></script>
+  <script src="./snake.js"></script>
+  <!-- 1. 集中管理 food snake map  2. 在start方法中, 开启定时器, 添加键盘事件 -->
+  <script src="./game.js"></script>
+  <script>
+
+    // 规则:
+    // 1. 不能反向运动
+    // 2. 不能撞墙
+    // 3. 不能吃自己
+
+    var map = document.querySelector('#map');
+    var btn = document.querySelector('button');
+    var g = new Game({
+      map: map
+    });
+
+    btn.onclick = function() {
+      g.start();
+    };
+
+  </script>
+
+
+</body>
+
+</html>

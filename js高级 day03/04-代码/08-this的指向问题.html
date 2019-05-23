@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+  // 1. 如果是直接调用的方法, this指向window
+  // function fn() {
+  //   console.log(this);
+  // }  
+  // fn();
+
+  // setInterval(function() {
+  //   // 定时器中的 this 指向 window
+  //   console.log(this);
+  // }, 2000);
+
+
+  // 2. 如果对象中的方法, 被调用了, this指向调用者, 谁调用的, 指向谁
+  // var obj = {
+  //   name: 'zs',
+  //   age: 18,
+  //   sayHi: function() {
+  //     console.log(this);
+  //   }
+  // };
+  // // 谁调用的方法, this, 就指向谁
+  // obj.sayHi();
+
+  // xx.fn();  fn函数在执行时, this指向 xx
+
+
+
+  // 3. 特例, 构造函数中执行的 this, this指向新创建的对象
+  // function Person(name, age) {
+  //   this.name = name;
+  //   this.age = age;
+  // }
+  // // new的作用:
+  // // (1) 创建一个新对象, 指定对象的类型
+  // // (2) 让构造函数的this, 指向新创建的对象
+  // // (3) 执行构造函数
+  // // (4) 返回新的对象
+  // var p = new Person('zs', 18);
+  // console.log(p);
+  
+
+
+  // fn(); // this 指向 window
+  // obj.fn(); // this 指向 obj
+  // var p = new Person(); // 构造函数执行时的 this 指向 p
+  
+</script>
+  
+</body>
+</html>

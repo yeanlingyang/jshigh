@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+    #map {
+      width: 800px;
+      height: 600px;
+      background-color: #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  
+
+  <button>开始游戏</button>
+  <div id="map"></div>
+
+
+  <script>
+
+    // 分析蛇对象: 是由一个一个的关节组成的
+    /* 
+      蛇对象
+        属性
+          关节的宽度 width
+          关节的高度 height
+          蛇头的颜色 headColor
+          蛇身的颜色 bodyColor
+          蛇的位置 body, 是一个数组 
+            x, y 只能描述一个的关节的坐标  { x: 2, y: 1 }
+            需要通过数组来存储, 数组中有着一个一个关节坐标的对象
+            [
+              { x: 2, y : 0 },
+              { x: 1, y : 0 },
+              { x: 0, y : 0 }
+            ]
+        方法:
+          渲染 render()
+          移动 move()
+    */
+    function Snake(options) {
+      options = options || {};
+      this.width = options.width || 20;
+      this.height = options.height || 20;
+      this.headColor = options.headColor || 'green';
+      this.bodyColor = options.bodyColor || 'red';
+
+      this.body = [
+        { x: 3, y : 0 },
+        { x: 2, y : 0 },
+        { x: 1, y : 0 }
+      ];
+    }
+
+    Snake.prototype.render = function(target) {
+      // 1. 循环创建 span
+      // 2. 添加到 target 中
+      // 3. 设置样式
+      for (var i = 0; i < this.body.length; i++) {
+        var span = document.createElement('span');
+        target.appendChild(span);
+
+        // 设置节点的样式, 宽高背景色
+        span.style.width = this.width + 'px';
+        span.style.height = this.height + 'px';
+        span.style.backgroundColor = i === 0 ? this.headColor : this.bodyColor;
+
+        // 定位之后, 就能看到了
+        span.style.position = 'absolute';
+        // this.body[i] 每个关节, { x: 2, y : 1 }
+        span.style.left = this.body[i].x * this.width + 'px';
+        span.style.top = this.body[i].y * this.height + 'px';
+      }
+    };
+
+    var map = document.querySelector('#map');
+    var snake = new Snake();
+    snake.render(map);
+
+
+  </script>
+
+
+</body>
+</html>
