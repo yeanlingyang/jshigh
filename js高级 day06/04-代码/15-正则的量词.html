@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 正则的量词:
+  // *  出现0次或1次或者多次
+  // +  出现1次或多次
+  // ?  出现0次或1次
+
+  // 表示 a 字符, 可以出现 0次或1次或多次
+
+  // 可以匹配, ''  'a'   'aa'  'aaa'  ...
+  // console.log(/^a*$/.test('a'));  // true
+  // console.log(/^a*$/.test(''));  // true
+  // console.log(/^a*$/.test('aa'));  // true
+  // console.log(/^a*$/.test('aaa'));  // true
+  // console.log(/^a*$/.test('b'));  // false
+
+  // +  出现1次或多次
+  // 可以匹配  'a'  'aa'  'aaa' ...
+  // console.log(/^a+$/.test('a'));  // true
+  // console.log(/^a+$/.test(''));  // false
+  // console.log(/^a+$/.test('aa'));  // true
+  // console.log(/^a+$/.test('aaa'));  // true
+  // console.log(/^a+$/.test('b'));  // false
+
+
+  // ? 出现0次或1次
+  // 可以匹配  ''  'a'
+  // console.log(/^a?$/.test('a'));  // true
+  // console.log(/^a?$/.test(''));  // true
+  // console.log(/^a?$/.test('aa'));  // false
+  // console.log(/^a?$/.test('aaa'));  // false
+  // console.log(/^a?$/.test('b'));  // false
+
+
+  // {m,n} 表示可以出现m次到n次    {1,3} 可以出现1次  2次  3次
+  // {m,}  至少出现m次            {4,}  出现4次以上
+  // {m}   出现 m 次              {4}   只能4次
+
+  // console.log(/^a{2,4}$/.test('a')); // false
+  // console.log(/^a{2,4}$/.test('aa')); // true
+  // console.log(/^a{2,4}$/.test('aaa')); // true
+  // console.log(/^a{2,4}$/.test('aaaa')); // true
+  // console.log(/^a{2,4}$/.test('aaaaa')); // false
+
+
+  // 出现2次以上
+  // console.log(/^a{2,}$/.test('a')); // false
+  // console.log(/^a{2,}$/.test('aa')); // true
+  // console.log(/^a{2,}$/.test('aaa')); // true
+  // console.log(/^a{2,}$/.test('aaaa')); // true
+  // console.log(/^a{2,}$/.test('aaaaa')); // true
+
+
+  // console.log(/^a{2}$/.test('a')); // false
+  // console.log(/^a{2}$/.test('aa')); // true
+  // console.log(/^a{2}$/.test('aaa')); // false
+  // console.log(/^a{2}$/.test('aaaa')); // false
+  // console.log(/^a{2}$/.test('aaaaa')); // false
+
+
+  /* 
+    * 表示0次或多次    {0,}
+    + 表示1次或多次    {1,}
+    ? 表示0次或1次     {0,1}
+
+    {m,n}  表示可以出现 m 到 n 次
+    {m,}   表示至少出现 m 次
+    {m}    只能出现 m 次
+  */
+
+
+
+</script>
+  
+</body>
+</html>

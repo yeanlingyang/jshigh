@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+
+  // abc 普通字符
+
+  // 匹配 a 或者 b 或者 c
+  // console.log(/a|b|c/.test('yyyyyyyyyaiiiii'));  // true
+  // console.log(/a|b|c/.test('b12312asdf'));  // true
+
+
+  // 匹配所有的小写字符, a或b或c或d .... 或 z
+  // [] 这个位置, 可以出现的字符
+  // [abc] 这个位置, 可以出现 a 或者 b 或者 c
+  // [a-z] 这个位置, 可以出现 a - z 的所有小写字符
+  // [0-9] 这个位置, 可以出现 0 - 9 所有数字
+
+  // console.log(/[abc]/.test('b1231231'));  // true   等价于  /a|b|c/
+
+  // console.log(/[a-z]/.test('b1231231'));  // true  
+  // console.log(/[a-z]/.test('AAAA'));  // false
+  // console.log(/[a-z]/.test('AAaA'));  // true
+
+  // 这个位置可以出现数字, 字母, 下划线
+  // console.log(/[a-zA-Z0-9_]/.test('abc'));
+
+  // [] 内的 ^ 表示 非
+  // 非数字
+  // console.log(/[^0-9]/.test('a')); // true
+  // console.log(/[^0-9]/.test('a123')); // true
+  // console.log(/[^0-9]/.test('1231231')); // false
+
+
+  // /[^abc]/.test('.')  // true
+
+  // a1b   a2b    a3b   
+  console.log(/a[123]b/.test('a12b'));
+  console.log(/a[123]b/.test('a1b'));
+
+</script>
+</body>
+</html>

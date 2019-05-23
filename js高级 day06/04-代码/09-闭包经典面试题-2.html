@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 每隔1秒, 打印一个数
+  // 1秒 => 1
+  // 2秒 => 2
+  // 3秒 => 3
+  // 4秒 => 4
+  // 5秒 => 5
+
+
+
+  // 需要用闭包, 来缓存变量, 闭包的内存不会释放
+
+  // for (var i = 1; i <= 5; i++) {
+  //   // 当setTimeout执行时, 此时全局的 i 已经改成了 6 了
+  //   setTimeout(function() {
+
+  //     console.log( i );
+
+  //   }, 1000 * i);
+  // }
+
+  
+
+  // 1. 闭包写法
+  // for (var i = 1; i <= 5; i++) {
+  //   (function(i) {
+  //     setTimeout(function() {
+  //       console.log( i );
+  //     }, 1000 * i);
+  //   })(i);
+  // }
+
+
+  // 2. 第二种闭包写法
+  // for (var i = 1; i <= 5; i++) {
+  //   // 当setTimeout执行时, 此时全局的 i 已经改成了 6 了
+  //   setTimeout((function(i) {
+  //     return function() {
+  //       console.log( i );
+  //     }
+  //   })(i), 1000 * i);
+  // }
+
+
+  // 写闭包: 函数内嵌套一个函数, 内函数引用外部函数的局部变量, 形成闭包
+  // 闭包的内存空间, 不会自动释放的
+
+
+</script>
+  
+</body>
+</html>

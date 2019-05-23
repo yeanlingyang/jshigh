@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  
+
+  // 斐波纳契数列(兔子数列): 从第三个数开始, 后面的数等于前两个数的和
+  // 1  1  2  3  5  8  13  21  34  55  ... 
+
+  // 求第12个斐波纳契数
+
+  // 找规律, 假设有个方法 getFib(n) 可以获取第 n 个斐波纳契数
+  // getFib(10) = getFib(9) + getFib(8);
+
+  // getFib(n) = getFib(n-1) + getFib(n-2);
+
+
+  // 一个函数内部调用了两次自己, 运行次数, 呈指数增长
+  // 1  2  4   8   16   32 ....
+
+
+  // 运算过程中:
+  // 1. 先判断这个数, 有没有算过, 如果算过了, 直接用
+  // 2. 如果没有算过, 接着自己算, 算完, 存起来
+  // arr[n] = 第n个斐波纳契数
+  // var arr = [];
+
+  // function getFib(n) {
+  //   if (n === 1 || n === 2) {
+  //     return 1;
+  //   }
+
+  //   // 如果已经算过了第 n 个数, 直接返回
+  //   if (arr[n]) {
+  //     return arr[n];
+  //   }
+  //   else {
+  //     // 没算过, 计算, 并将结果存起来
+  //     arr[n] = getFib(n-1) + getFib(n-2);
+  //     return arr[n];
+  //   }
+  // }
+  // console.log(getFib(100));
+  // console.log(getFib(50));  // 直接返回
+
+
+
+  // 找规律: getFib(n) = getFib(n-1) + getFib(n-2);
+
+  var arr = [];  // 专门用于存储已经算好的数,  arr[n] = 第n个斐波纳契数
+  function getFib(n) {
+    if (n === 1 || n === 2) {
+      return 1;
+    }
+
+    if (arr[n]) {
+      return arr[n];
+    }
+    else {
+      arr[n] = getFib(n-1) + getFib(n-2);
+      return arr[n];
+    }
+  }
+
+  console.log( getFib(10) );;
+  console.log( getFib(100) );;
+  console.log( getFib(1000) );;
+  console.log( getFib(99) );
+
+
+</script>
+  
+</body>
+</html>

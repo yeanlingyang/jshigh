@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // | 表示或, 或优先级最低
+  // () 一般用于提升优先级, 优先级最高
+
+  // 看有没有 ab 或者 cd
+  // console.log(/ab|cd/.test('abccccccc')); // true
+  // console.log(/ab|cd/.test('cccccaaaabcccc')); // true
+  // console.log(/ab|cd/.test('asdfsa')); // false
+
+
+  // 匹配 abd 或者 acd
+  // console.log(/a(b|c)d/.test('abccccc'));  // false
+  // console.log(/a(b|c)d/.test('abcd'));  // false
+
+
+  // 匹配 b 或者 foot
+  console.log(/b|foot/.test('bbbbb'));  // true
+
+  // 匹配 boot 或者 foot
+  console.log(/(b|f)oot/.test('bbbbb'));  // false
+
+
+
+</script>
+  
+</body>
+</html>

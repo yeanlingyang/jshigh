@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // console.log(/a/.test('abc'));  // true  不严格匹配, 只要有, 结果就是 true
+
+
+  // 正则的边界, 严格匹配  
+  // ^  必须以..开头
+  // $  必须以..结尾
+  // console.log(/^a/.test('abc')); // true
+  // console.log(/^a/.test('bca')); // false 
+
+  // console.log(/a$/.test('abc')); // false
+  // console.log(/a$/.test('bca')); // true
+
+
+  // 严格匹配, 严格到字符数都是确定的
+  // console.log(/^a$/.test('a')); // true
+  // console.log(/^a$/.test('abc')); // false
+  // console.log(/^a$/.test('aa')); // false
+
+
+  console.log(/^chuan/.test("dachuan"));  // false
+  console.log(/^chuan/.test("chuang"));   // true
+  console.log(/^chuan/.test("chuan"));   // true
+
+  console.log(/chuan$/.test("chuan"));  // true
+  console.log(/chuan$/.test("dachuan")); // true
+  console.log(/chuan$/.test("chuang"));  // false
+
+
+  // 严格匹配, 严格到字符数 都是确定的
+  console.log(/^chuan$/.test("chuan"));  // true
+  console.log(/^chuan$/.test("chuanchuan")); // false
+
+
+  // 只能是 pengpeng
+  console.log(/^pengpeng$/.test('pengpeng')) // true;  严格匹配
+  console.log(/^pengpeng$/.test('pengpeng123')) // false;  严格匹配
+
+
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+
+  // 普通字符  a  b  c
+  // console.log(/a/.test('abc'));  // true
+  // console.log(/ac/.test('abcd'));  // false
+
+
+  // 元字符, 有特殊含义的
+  // \d 数字, 0-9
+  // console.log(/\d/.test('abc')); // false
+  // console.log(/\d/.test('a111')); // true
+
+  // \D 非数字
+  // 只要找到了非数字, 就返回true
+  // console.log(/\D/.test('abc'));  // true
+  // console.log(/\D/.test('1111a'));  // true
+  // console.log(/\D/.test('123123'));  // false
+
+  // \w 匹配单词字符, 字母数字下划线 范围: 0-9 a-z A-Z _
+  // console.log(/\w/.test('$_$'));   // true
+  // console.log(/\w/.test('$$'));   // false
+  // console.log(/\w/.test('123123'));   // true
+
+  // \W 只要不是\w中的字符, 都匹配
+  // console.log(/\W/.test('$_1231231231231231'));  // true
+  // console.log(/\W/.test('$'));  // true
+  // console.log(/\W/.test('123'));  // false
+
+  // \s 匹配不可见字符 (换行\n 空格 )
+  // console.log(/\s/.test('      ')); // true
+  // console.log(/\s/.test('123 123')); // true
+  // console.log(/\s/.test('123\n123')); // true
+  // console.log(/\s/.test('asdfasdf')); // false
+
+  // \S 可见字符 
+  // console.log(/\S/.test('      '));  // false
+  // console.log(/\S/.test('123 123')); // true
+  // console.log(/\S/.test('123\n123')); // true
+  // console.log(/\S/.test('asdfasdf'));  // true
+
+
+  // . 匹配任意字符 (除了 \n)
+  
+  // a.b 可以匹配  acb  aab  acb  a1b
+  // console.log(/a.b/.test('a9bcd'));  // true
+
+  // 有时, 就需要匹配 点, 需要转义, \. 表示普通的 点
+  // 希望是 a.b 才返回 true
+  // console.log(/a\.b/.test('a1b'));  // false
+  // console.log(/a\.b/.test('a.b'));  // true
+
+
+
+  /* 
+    元字符:
+      \d  匹配数字 0-9
+      \D  非数字
+      \w  数字字母下划线
+      \W  非 \w
+      \s  不可见字符 (空格  \n)
+      \S  可见字符
+      .   匹配任意字符 (除了 \n)
+
+      如果真的要匹配 .  =>  \.  转义, 表示普通的点
+  
+   */
+
+
+
+
+
+
+</script>
+</body>
+</html>

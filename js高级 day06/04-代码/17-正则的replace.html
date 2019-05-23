@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // var str = 'aabbaaccdd';
+  // str = str.replace('aa', 'xx');  // 将aa替换成 xx
+  // console.log(str);
+
+
+  var str = 'aabbaaccdd';
+  // str = str.replace(/aa/, 'xx');    // 正则也比较懒, 不加参数, 只替换一次
+  str = str.replace(/aa/g, 'xx');    // 加上 g, 表示全局替换
+  console.log(str);
+
+
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // function outer() {
+    //   var arr = [];  // 专门用于存储已经算好的数,  arr[n] = 第n个斐波纳契数
+    //   function getFib(n) {
+    //     if (n === 1 || n === 2) {
+    //       return 1;
+    //     }
+
+    //     if (arr[n]) {
+    //       return arr[n];
+    //     }
+    //     else {
+    //       arr[n] = getFib(n - 1) + getFib(n - 2);
+    //       return arr[n];
+    //     }
+    //   }
+    //   return getFib;
+    // }
+
+    // var result = outer();
+    // console.log(result(12));
+
+
+
+    // 省去了外部的函数名, 利用函数自调用
+    var result = (function() {
+      var arr = [];  // 专门用于存储已经算好的数,  arr[n] = 第n个斐波纳契数
+      function getFib(n) {
+        if (n === 1 || n === 2) {
+          return 1;
+        }
+
+        if (arr[n]) {
+          return arr[n];
+        }
+        else {
+          arr[n] = getFib(n - 1) + getFib(n - 2);
+          return arr[n];
+        }
+      }
+      return getFib;
+    })();
+
+
+    // 闭包:
+    // 1. 闭包: 一个函数内部嵌套了另一个函数, 内部函数引用了外部函数的变量, 这个模型, 称之为闭包
+    // 2. 闭包的内存不会自动释放的
+
+
+  </script>
+
+</body>
+
+</html>

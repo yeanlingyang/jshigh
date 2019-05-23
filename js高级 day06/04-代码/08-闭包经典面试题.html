@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <button>按钮0</button>
+  <button>按钮1</button>
+  <button>按钮2</button>
+  <button>按钮3</button>
+  <button>按钮4</button>
+  <button>按钮5</button>
+  <button>按钮6</button>
+  <button>按钮7</button>
+  <button>按钮8</button>
+  <button>按钮9</button>
+
+<script>
+
+
+  // 点击按钮, 打印对应按钮的下标 (尽量使用闭包实现)
+  // var btns = document.querySelectorAll('button');
+  // for (var i = 0; i < btns.length; i++) {
+  //   btns[i].index = i;
+  //   // 点击的时候执行
+  //   btns[i].onclick = function() {
+  //     // console.log(i);
+  //     console.log(this.index);
+  //   }
+  // }
+
+
+  // 闭包: 函数内部嵌套一个函数, 内部函数要引用外部函数的局部变量, 形成了闭包
+
+  // 使用闭包, 完成功能
+  // var btns = document.querySelectorAll('button');
+  // for (var i = 0; i < btns.length; i++) {
+
+  //   (function(index) {  // 函数的形参, 就是局部变量, 这块空间不会释放, 就把 index 存下来了
+
+  //     // 点击的时候执行
+  //     btns[index].onclick = function() {
+  //       console.log(index);
+  //     }
+
+  //   })(i);
+  // }
+
+
+  // 闭包: 函数内部嵌套一个函数, 内部函数要引用外部函数的局部变量, 形成了闭包
+
+  // var btns = document.querySelectorAll('button');
+  // for (var i = 0; i < btns.length; i++) {
+
+  //   // 点击的时候执行
+  //   btns[i].onclick = (function(index) {
+  //     return function() {
+  //       console.log(index);
+  //     };
+  //   })(i);
+
+  // }
+
+
+
+
+  // var btns = document.querySelectorAll('button');
+  // for (var i = 0; i < btns.length; i++) {
+
+  //   (function(i) {
+  //     // 点击的时候执行
+  //     btns[i].onclick = function() {
+  //       console.log(i);
+  //     }
+  //   })(i);
+
+  // }
+
+
+  
+
+  // 外部函数 嵌套 内部函数, 且内部函数 引用了 外部函数的局部变量, 形成了闭包
+  var btns = document.querySelectorAll('button');
+  for (var i = 0; i < btns.length; i++) {
+
+    // 点击的时候执行
+    btns[i].onclick = (function(i) {
+      return function() {
+        console.log(i);
+      }
+    })(i);
+
+  }
+
+
+</script>
+  
+</body>
+</html>

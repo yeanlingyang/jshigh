@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // 内存泄露: 如果一块内存空间, 一直得不到释放, 我们认为这块内存泄露了
+
+    // function fn() {
+    //   var a = 123;
+    //   console.log(a);
+    // }
+    // fn();
+
+    // js的垃圾回收机制: 会将一些不用的内存空间, 释放掉
+    // 1. 引用计数: 如果一块空间的引用次数, 最终变成 0, 就会被释放掉   (循环引用)
+    // 2. 标记清除: 如果一块内存空间, 可以访问到, 就不释放, 如果访问不到了, 就会释放掉
+
+    // var obj = {    // obj 是这个对象内存空间的一个引用
+    //   name: 'zs',
+    //   age: 19
+    // };
+    // var obj2 = obj;  // 将地址赋值给了obj2, 所以此时这个对象内存空间, 有两个引用
+
+    // var obj3 = obj2; // 这个对象, 有3个引用
+
+    // obj = null;  // obj不再指向那个对象了, 此时2个引用
+
+    // obj2 = 123;  // 此时1个引用了
+
+    // obj3 = null;  // 此时没有任何变量可以指向那个对象的空间, 就会被垃圾回收掉, 内存就释放了
+
+
+    // 如果两个对象, 互相引用, 形成了循环引用, 使用引用计数, 就会得不到的释放 (内存泄露)
+    function f() {
+      var o = {};
+      var o2 = {};
+      o.a = o2; // o 引用 o2
+      o2.a = o; // o2 引用 o
+      return "azerty";
+    }
+    f();
+
+
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // 正则表达式, 就是一套规则, 可以专门用于进行表单校验
+
+
+  // 如何创建正则表达式:
+  // 1. 通过构造函数  
+  // 2. 字面量
+ 
+  // 1. 构造函数的方式
+  // \d 表示数字, 0-9,   /\d/ 可以匹配所有的数字    // var obj = new Object({})  var obj = {};
+  // var reg = new RegExp(/\d/);
+
+  // 通过 test 方法, 判断字符串, 是否符合正则规则
+
+  // 只要有数字, 就返回 true
+  // console.log(reg.test('aaaaa'));  // false
+  // console.log(reg.test('1111'));  // true
+  // console.log(reg.test('aaa1aa'));  // true
+
+
+
+  // 2. 字面量  /\d/
+  // var reg = /\d/;
+  // console.log(reg.test('bb222bbb'));  // true
+
+  // console.log(/\d/.test('aaaa'));   // false
+
+
+</script>
+  
+</body>
+</html>

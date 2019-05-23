@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 递归函数: 在一个函数内部, 自己调用自己, 递归
+  // 函数在调用时, 其实是占用内存, 函数在调用时, 会开辟一块内存, 进行执行
+
+  // 递归:
+  // 1. 自己调用自己
+  // 2. 必须要有结束条件, 要有出口
+
+  // 讲5遍
+  // var count = 1;
+
+  // function tellStory() {
+  //   count++;
+  //   console.log('从前有座山');
+  //   console.log('山里有座庙');
+  //   console.log('庙里有个老和尚');
+  //   console.log('老和尚在和小尼姑讲故事');
+
+  //   if (count <= 10) {
+  //     // 在一个函数的内部, 自己调用自己
+  //     tellStory();
+  //   }
+  // }
+
+  // tellStory();
+
+
+  // 递归: 是一种算法, 是一种思想, 化归思想, 复杂的问题简单化 
+  // 求 1-100 的和
+
+  // 1,2,3,4... 100 的和是什么 ?
+  // getSum(100) = getSum(99) + 100;
+  // getSum(99) = getSum(98) + 99;
+  // getSum(98) = getSum(97) + 98;
+  // ....
+  // getSum(3) = getSum(2) + 3;
+  // getSum(2) = getSum(1) + 2;
+  // getSum(1) = 1;
+
+  // 找规律:
+  // getSum(n) = getSum(n-1) + n;
+
+  // 假设有个方法, 可以获取n个数的和,  getSum(n);
+
+  function getSum(n) {
+    if (n === 1) {
+      return 1;
+    }
+
+    return getSum(n-1) + n;
+  }
+
+  console.log(getSum(10));
+  console.log(getSum(100));
+
+
+</script>
+  
+</body>
+</html>

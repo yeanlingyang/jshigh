@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+  // 元字符
+  // \d  --- 数字 0-9
+  // \D
+  // \w  --- 字母数字下划线
+  // \W
+  // \s
+  // \S
+
+
+  // qq号, 规则: 5-11的数字, 不能以0开头的数字, 1-9
+  // var reg = /^[1-9]\d{4,10}$/;
+  // console.log(reg.test('547547547'));
+  // console.log(reg.test('a47547547'));
+
+
+
+  // 座机  xxx-xxxxxxxxx
+  // 座机, 规则:  xxx-xxxxxxxx,  0开头,  3位或4位-7位或8位
+  // var regPhone = /^0\d{2,3}-\d{7,8}$/;
+  // console.log(regPhone.test('021-88888888'));
+  // console.log(regPhone.test('0510-88888888'));
+  // console.log(regPhone.test('0510-888888888'));
+  // console.log(regPhone.test('asdfasdfsf'));
+
+
+
+  // 姓名  规则: 必须汉字 2-6
+  // 汉字也是字符的一种, 也有范围  [\u4e00-\u9fa5]
+
+  // console.log('\u4e00'); // 一
+  // console.log('\u4e01'); // 丁
+  // console.log('\u9fa5'); 
+
+  // var regName = /^[\u4e00-\u9fa5]{2,6}$/;
+  // console.log(regName.test('鹏鹏'));
+  // console.log(regName.test('帅鹏鹏帅鹏鹏帅鹏鹏帅鹏鹏'));
+
+
+  // 手机号的校验 规则: 11位, 以 1 开头
+  // var regMobile = /^1\d{10}$/;
+
+  // 1开头, 11位,  
+  // 前三位号段 号段13[0-9] 147 15[0-9] 17[0-9] 18[0-9]
+
+  // var regMobile = /^(13\d|147|15\d|17\d|18\d)\d{8}$/;
+  // console.log(regMobile.test('15751775177'));
+  // console.log(regMobile.test('35751775177'));
+
+
+
+  // *  0次或多次
+  // +  1次或多次
+  // ?  0次或1次
+
+  // 校验邮箱   单词 @ 单词 . 单词 
+  // 123123@qq.com
+  // 123123@163.com
+  // jepson_pp@qq.com   可以出现数字字母下划线  \w
+
+  // jepsonpp@qq.com.cn
+  // jepsonpp@qq.com.cn.top
+
+  var regEmail = /^\w+@\w+(\.\w+)+$/;  // 验证邮箱
+
+  console.log(regEmail.test('123123@qq.com'));  // true
+  console.log(regEmail.test('@qq.com'));  // false
+  console.log(regEmail.test('12312qq.com'));  // false
+
+  console.log(regEmail.test('jepsonpp@qq.com.cn.top'));  // true
+
+
+
+
+</script>
+
+
+  
+</body>
+</html>
