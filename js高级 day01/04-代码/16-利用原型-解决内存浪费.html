@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 自定义构造函数的方式, 结合着 new 一起使用
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // 共享的方法, 为了性能, 应该添加到公共的原型上
+  Person.prototype.sayHi = function() {
+    console.log('你好哇');
+  };
+  Person.prototype.run = function() {
+    console.log('会跑');
+  };
+
+  var p1 = new Person('zs', 2);
+  var p2 = new Person('ls', 4);
+  console.log(p1.sayHi === p2.sayHi);  // true
+
+
+
+</script>
+
+  
+</body>
+</html>

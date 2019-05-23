@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 神秘对象, 所有实例(创建出来的对象)的方法, 都在这一个神秘对象中完成了共享
+  var smdj = {
+    sayHi: function(){
+      console.log('大家好');
+    },
+    run: function() {
+      console.log('会跑步');
+    }
+  }
+
+  // 自定义构造函数的方式, 结合着 new 一起使用
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.sayHi = smdj.sayHi;
+    this.run = smdj.run;
+  }
+
+  var p1 = new Person('zs', 2);
+  var p2 = new Person('ls', 4);
+
+  console.log(p1.sayHi === p2.sayHi);  // true
+
+
+
+</script>
+
+  
+</body>
+</html>

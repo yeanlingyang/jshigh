@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 1. 任何函数, 都有一个 prototype 属性, 指向了一个神秘对象 (原型)  Person.prototype
+  // 2. 原型对象, 又有一个 constructor 属性, 指向构造函数
+  // 3. 所有创建出来的对象, 都可以直接访问原型对象上的成员(属性和方法)
+
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  // console.dir(Person);
+  // console.dir(Person.prototype);  // 原型对象
+  // console.log(Person.prototype.constructor === Person); // true
+
+  Person.prototype.money = 1000000;
+  Person.prototype.car = {
+    brand: '玛莎拉蒂',
+    price: 1000000
+  };
+  Person.prototype.sayHi = function() {
+    console.log('你好, 哈哈哈');
+  };
+
+
+  var p1 = new Person('zs', 16);
+  var p2 = new Person('zf', 12);
+
+  console.log(p1.car);
+  console.log(p2.car);
+  console.log(p1.car === p2.car);
+  p1.sayHi();
+  p2.sayHi();
+  console.log(p1.sayHi === p2.sayHi);
+
+
+  // 1. 任何函数, 都有一个 prototype 属性, 指向了一个原型对象,  函数.prototype  原型对象(爹)
+  // 2. 原型对象上, 有一个 constructor 属性, 指向了构造函数 (妈)
+  // 3. 创建出来的对象, 都可以直接访问原型上的成员(属性和方法)
+
+  // 总结: 复用的方法, 一般不会给每一个实例直接添加, 一般是给原型添加
+  //      给原型添加的方法, 将来所有创建的对象, 都可以共享这些方法 (防止内存浪费的)
+
+</script>
+  
+</body>
+</html>

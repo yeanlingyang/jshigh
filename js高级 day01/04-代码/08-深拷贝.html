@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+
+  // 作用: 传给我一个对象, 我就给你返回一个内容一样的不同对象
+  function deepCopy(obj) {
+    var newObj = {};
+    for (var k in obj) {
+      // 如果是复杂数据类型(对象), 需要处理, 需要接着拷贝
+      // 如果是简单数据类型, 直接赋值
+      // if (typeof obj[k] === 'object') {
+      //   // 是复杂类型, 是对象
+      //   // console.log(obj[k], '是复杂类型, 需要处理');
+      //   newObj[k] = deepCopy( obj[k] );
+      // }
+      // else {
+      //   // 简单类型, 不是对象
+      //   newObj[k] = obj[k];
+      // }
+
+      newObj[k] = typeof obj[k] === 'object' ? deepCopy(obj[k]) : obj[k];
+    }
+    return newObj;
+  }
+
+  var p1 = {
+    name: 'zs',
+    age: 18,
+    car: {
+      brand: '法拉利',
+      price: 1000000
+    }
+  };
+
+  var p2 = deepCopy(p1);
+  p1.car.brand = '玛莎拉蒂';
+
+  console.log(p1);
+  console.log(p2);
+
+
+  // 面试题的目的: 为了强化 值类型 和 引用类型的理解
+
+</script>
+  
+</body>
+</html>

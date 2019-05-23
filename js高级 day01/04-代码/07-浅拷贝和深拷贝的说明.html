@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 要求: 封装一个方法, 可以拷贝一个对象, 返回  (浅拷贝, 只拷贝了一层)
+  function copy(obj) {
+    var newObj = {};
+    for (var k in obj) {
+      newObj[ k ] = obj[ k ];
+    }
+    return newObj;
+  }
+
+  var p1 = {
+    name: 'zs',
+    age: 18,
+    car: {
+      brand: '法拉利',
+      price: 1000000
+    }
+  };
+  var p2 = copy(p1);
+  p2.car.brand = '摩托罗拉';
+
+
+  console.log(p1);
+  console.log(p2);
+
+  // 浅拷贝, 只拷贝了一层, 如果全是简单类型的属性, 没有问题!!!
+  // 但是如果有复杂类型的属性(对象), 此时拷贝的只是地址, 需要处理的
+
+
+
+</script>
+  
+</body>
+</html>

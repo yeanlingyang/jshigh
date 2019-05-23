@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<p>我是 p 标签</p>
+<p>我是 p 标签</p>
+<p>我是 p 标签</p>
+
+<div>我是 div 标签</div>
+<div>我是 div 标签</div>
+<div>我是 div 标签</div>
+
+<script>
+  // 给所有的 p 标签, 加上 1px 的边框
+  // 给所有的 div 标签, 加上 1px 的边框
+
+  // 面向过程: 关注过程
+  // 1. 找对象, 找到所有的 p
+  // 2. for 循环, 遍历
+  // 3. 设置边框
+  var ps = document.querySelectorAll('p');
+  for (var i = 0; i < ps.length; i++) {
+    ps[i].style.border = '1px solid blue';
+  }
+
+  var divs = document.querySelectorAll('div');
+  for (var i = 0; i < divs.length; i++) {
+    divs[i].style.border = '1px solid blue';
+  }
+
+
+</script>
+
+  
+</body>
+</html>

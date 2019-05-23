@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  /* 
+    1. 变量: 存储数据
+       变量的命名规则(法律):
+         (1) 由字母数字下划线$组成, 不能以数字开头
+         (2) 不能是关键字或者保留字  var if;  错误
+         (3) 区分大小写
+       变量的命名规范(道德):
+         (1) 变量命名要有意义,  var box;  var button; 
+         (2) 遵循驼峰命名,  var myname;  var myName;
+
+    2. 数据类型:
+       简单数据类型: number string boolean undefined null
+       复杂数据类型: 数组  函数  对象
+
+    3. 类型转换
+       转成字符串: String(xx)  xx.toString()   + ''
+       转成数字: Number(xx)  parseInt(xx) parseFloat(xx)  +age   age*1
+       转成布尔: Boolean(xx)  !!flag
+
+
+    4. 运算符:
+       算数运算符: + - * / %
+       赋值运算符: = += -= *= /= %=
+       比较运算符: > < >= <= == === != !==
+       逻辑运算符: && || !
+       自增自减运算符: ++  --
+
+       运算符的优先级:  ()  >   一元(++ -- !)   >   算数(先乘除后加减)  >  比较   >  逻辑
+       (3 + 5) * 2
+
+    5. 流程控制语句
+       顺序结构
+       分支结构: if...else..   switch...case...   三元运算符
+       循环结构: while..     do..while..     for...
+
+
+    6. 数组
+       创建数组: var arr = [];   var arr = new Array();
+       长度: arr.length
+       下标范围: 0 ~ arr.length-1
+       数组的存值取值: 数组名[下标]   数组名[下标]='值';
+       数组的遍历: for (var i = 0; i < arr.length; i++) { ... }
+
+    7. 函数: 对于一段重复代码的封装复用
+       声明和调用:
+         function fn(a, b) { ... } 声明式
+         var fn = function(a, b) { ... } 函数表达式的方式
+
+         fn(1, 2);
+
+       函数的参数:
+         形参: 声明时定义的参数, 就是形参, 形参默认没有具体的值或者类型, 只在调用时, 才有
+               作用: 占位置
+
+         实参: 调用时传递的参数, 就是实参, 实参有具体的值或者类型
+              作用: 在函数调用时, 将值传递给形参
+      
+       返回值:
+         希望一个函数执行调用, 有结果, 需要 return 值;
+
+    8. 对象: 无序的键值对的集合
+       创建对象: var obj = {};   var obj = new Object();
+       对象的存值和取值: 对象名.属性名    对象名['属性名']
+       对象的属性和方法
+       对象的属性: 对象中的简单值, 基本值, 可以描述对象的特征
+       对象的方法: 对象中的函数, 可以描述对象的行为
+       var obj = { name: 11, age: 18, sayHi: function() { ... } }
+       
+       对象的遍历: for (var k in obj) { .... }
+
+    9. 内置对象
+       Math   Date   Array   Number  String  Boolean
+  
+  */
+
+
+</script>
+  
+</body>
+</html>

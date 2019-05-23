@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+  // 逻辑中断, 短路运算
+
+  // &&   找假值, 只要遇到了假值, 就中断短路 (后面的不看了)
+  // ||   找真值, 只要看到了真值, 就中断短路 (后面的不看了)
+
+
+  // function demo(fn) {
+  //   // if (fn) {
+  //   //   fn();
+  //   // }
+  //   fn && fn();
+  // }
+
+  // demo(function() {
+  //   console.log(1111);
+  // });
+  // demo();
+
+
+  // var age = 2;
+  // // if(age > 18) {
+  // //   console.log('可以上网了');
+  // // }
+  // age > 18 && console.log('可以上网了');
+
+
+
+  // 逻辑或, 一般可以用于设置默认值
+  function getSum( a, b ) {
+    a = a || 0;
+    b = b || 0;
+
+    var sum = a + b;
+    return sum;
+  }
+
+  console.log(getSum());;
+
+
+
+</script>
+  
+</body>
+</html>

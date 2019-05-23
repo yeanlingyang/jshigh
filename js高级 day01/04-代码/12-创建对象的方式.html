@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 方式1: var obj = new Object() 内置构造函数
+
+  // 方式2: var obj = {};  字面量
+  // var obj = {
+  //   name: 'pp',
+  //   age: 18
+  // };
+  // var obj2 = {
+  //   name: 'pp',
+  //   age: 18
+  // };
+  // 缺点: 创建多个对象时, 需要一个一个的创建
+
+
+  // 批量创建对象
+  // 方式3: 工厂函数的方式, 就是对于创建对象的封装
+  // function createPerson(name, age) {
+  //   var obj = {
+  //     name: name,
+  //     age: age
+  //   }
+  //   return obj;
+  // }
+  // var p1 = createPerson('zs', 18);
+  // var p2 = createPerson('ls', 18);
+  // console.log(p1);
+  // console.log(p2);
+  // 缺点: 创建出来的对象, 都是 object 类型的, 不好区分类型
+
+
+  // 方式4: 自定义构造函数的方式, 结合着 new 一起使用
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.sayHi = function() {
+      console.log('大家好, 我是' + this.name);
+    }
+  }
+  // new做的四件事:
+  // 1. 创建一个对象, 并指定类型
+  // 2. 让构造函数的this, 指向了新对象
+  // 3. 执行构造函数
+  // 4. 将新创建的对象, 返回
+  var p1 = new Person('zs', 2);
+  var p2 = new Person('ls', 4);
+  console.log(p1);
+  console.log(p2);
+
+
+  // 属性和方法  统一称之为 成员
+
+
+
+
+</script>
+
+  
+</body>
+</html>
