@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // 函数 也是 一种特殊的对象, 可以添加属性 和 方法
+  // function fn() {
+  //   console.log('执行函数');
+  // }
+  // fn.aaa = 123;
+  // console.dir(fn);
+
+
+  // 函数有三种声明方法
+  // function fn() {  }   函数声明式
+  // fn()
+
+  // var fn = function() {  }  函数表达式
+  // fn();
+
+  // var fn = new Function('alert(123)');  构造函数的方式
+  // fn();
+
+
+  // js的规则:
+  // 1. 所有的函数, 都是由 Function 创建出来的
+
+    
+  // 妈妈: Function 构造函数
+  // 爸爸: Function.prototype 原型
+  // 实例: fn函数
+  var fn = new Function('alert(123)');  // 构造函数的方式
+  fn();
+
+  // fn.__proto__ === Function.prototype  true
+
+  // Function.prototype.__proto__.constructor === Object  true
+
+
+  // 任何一个函数的原型链:
+  // function Person() {
+
+  // };
+
+  // 爸爸: Function.prototype
+  // 妈妈: Function
+  // 实例: 函数Person
+  // var Person = new Function();
+
+  // 描述函数Person的原型链
+  // Person ----> Person.__proto__ (Function.prototype) ---->  Person.__proto__.__proto__ (Object.prototype) ----> null
+
+
+</script>
+  
+</body>
+</html>

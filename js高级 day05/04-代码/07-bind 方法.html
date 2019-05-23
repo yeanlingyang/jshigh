@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 上下文调用模式: 可以自行指定 this 的指向, 想让 this 指向谁, 就指向谁
+  // fn.call(this指向, x, y); 调用函数, 同时指定了 this 指向
+  // fn.apply(this指向, [x, y]);  调用函数, 同时指定了 this 指向
+
+  // 任何一个函数都有一个 bind 方法, 作用: 复制一个新函数, 并且将新函数的 this 固定死指向传入的this值
+  // var newFn = fn.bind(this指向)
+
+
+  // function fn() {
+  //   console.log(this); // window
+  // }
+  // fn();   // 函数调用模式, this window
+  // var obj = {name: 'pp', age: 18};
+  // var newFn = fn.bind(obj);  // 返回一个新函数, 且this永远指向 obj
+
+  // newFn();
+
+  // var newObj = {
+  //   name: 'ls',
+  //   age: 18,
+  //   fn: newFn
+  // };
+  // newObj.fn();  // this指向还是 pp obj对象
+
+
+
+  // 定时器
+  // var zsObj = {
+  //   name: 'zs',
+  //   age: 18,
+  //   sayHi: function() {
+  //     var that = this;
+
+  //     // 这个张三, 每隔一秒, 打个招呼, 说出自己的名字
+  //     setInterval(function() {
+
+  //       console.log('大家好, 我是' + that.name);
+
+  //     }, 1000);
+
+  //   }
+  // };
+  // zsObj.sayHi();  // 方法调用模式, this指向调用者
+
+
+
+  // 利用 bind 方法, 绑定好 this
+  // 装逼写法, 纯粹是秀操作
+  var zsObj = {
+    name: 'zs',
+    age: 18,
+    sayHi: function() {
+      // this zsObj 调用者
+      // var newFn = (function() {
+      //   console.log('大家好, 我是' + this.name);
+      // }).bind(this);
+
+      setInterval((function() {
+        
+        console.log('大家好, 我是' + this.name);
+
+      }).bind(this), 1000);
+
+    }
+  };
+  zsObj.sayHi();  // 方法调用模式, this指向调用者
+
+
+
+
+</script>
+  
+</body>
+</html>

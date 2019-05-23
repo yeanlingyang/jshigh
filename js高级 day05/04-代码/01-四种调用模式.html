@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 四种模式:
+  // 1. 函数调用模式: fn()  this: window
+  // 2. 方法调用模式: obj.xx()  this: 调用者 obj
+  // 3. 构造函数调用模式: var p = new Person();  this: 实例p
+
+  // 4. 上下文调用模式: this在这边是可以自己指定的, 我想要this指向谁, this就指向谁
+  //    call  apply  bind
+
+
+  //    记忆: (1) 定时器的 this, 指向 window 
+  //          (2) 事件处理函数里面的 this 指向事件源
+
+  // function fn() {
+  //   console.log(this);
+  // }
+  // fn();  // 函数调用模式  window
+
+  // var p = new fn();  // 构造函数调用模式, this指向实例p
+
+  // var obj = {};
+  // obj.fn = fn;
+  // obj.fn();  //  方法调用模式, this: obj
+
+
+
+</script>
+  
+</body>
+</html>

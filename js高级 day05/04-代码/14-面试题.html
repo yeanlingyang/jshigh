@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+
+    // var num = 10;
+    // fn1();
+    // function fn1() {
+    //   console.log(num);  // undefined
+    //   var num = 20;
+    //   console.log(num); // 20
+    // }
+    // console.log(num);  // 10
+
+
+
+    // 预解析 或 作用域相关的题目, 一定要画图, 光瞅, 很容易错
+
+    // var num1 = 10;
+    // var num2 = 20;
+    // function fn(num1) {
+    //   // 形参 var num1 = undefined;  num1 是 局部变量
+    //   num1 = 100;
+    //   num2 = 200;
+    //   num3 = 300;
+    //   console.log(num1);  
+    //   console.log(num2); 
+    //   console.log(num3); 
+    //   var num3;
+    // }
+    // fn();
+    // console.log(num1); 
+    // console.log(num2);  
+    // console.log(num3);  
+
+
+
+    
+    // 不要看!!!
+    // 画图!!!
+    var color = "red";
+    function outer() {
+      var anotherColor = "blue";
+
+      function inner() {
+        var tmpColor = color;
+        color = anotherColor;
+        anotherColor = tmpColor;
+        console.log(anotherColor);
+      }
+
+      inner();
+    }
+    outer();
+    console.log(color);
+
+
+  </script>
+
+</body>
+
+</html>

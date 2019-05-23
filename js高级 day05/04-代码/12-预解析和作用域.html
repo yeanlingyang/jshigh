@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 预解析: 会把函数声明 和 变量的声明提升
+  // 函数声明会提升, 但是不提升调用
+  // 变量声明会提升, 但是不提升赋值
+
+  // 相当于: var a = function() { console.log('aaaa') };
+  // function a() {
+  //   console.log("aaaaa");
+  // }
+
+  // console.log(a);  // 整个函数
+  // var a = 1;
+  // console.log(a);  // 1
+
+
+  // fn();
+  // function fn() {
+  //   console.log('11111');
+  // }
+
+
+  // console.log(a);  // undefined
+  // var a = 123;
+
+</script>
+  
+</body>
+</html>

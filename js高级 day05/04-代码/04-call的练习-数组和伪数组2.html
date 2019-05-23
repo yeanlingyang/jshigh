@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 数组, 有着数组的方法, 可以遍历
+  // 伪数组, 本质上是对象, 不是数组, 数组的方法不能直接调用, 但是伪数组是可以遍历的
+
+  // 常见的伪数组: arguments  document.querySelectorAll得到也是伪数组    jQuery对象
+
+  // 需求: 将所有传递的参数, 通过 - 进行字符串拼接, 100-200-300-400
+
+  // arguments 借用数组的方法, 借用 join
+  // function fn() {
+  //   // console.log(arguments.join('-'));
+
+  //   console.log([].join.call(arguments, '-'));
+  // }
+  // fn(100, 200, 300, 400);
+
+
+  
+
+  // 面试题: 如果将一个伪数组, 转成成一个真数组   (伪数组是可以遍历的)
+  // arr.slice() 从数组中截取一部分, 返回一个新数组
+  // 1. arr.slice();       截取整个数组, 全部截取, 返回, 返回了一个一模一样的新数组
+  // 2. arr.slice(begin);  从begin 开始截取, 截取到最后  
+  // 3. arr.slice(begin, end);  从begin 开始截取, 一直截取到 end结束,  包含begin, 不包含end
+
+  var obj = {
+    0: '张三',
+    1: '李四',
+    2: '王五',
+    3: '赵六',
+    length: 4
+  };
+  // obj.slice(); 可以借用数组的方法
+
+  // var newArr = [].slice.call(obj);
+  // var newArr = [1, 2, 3, 4].slice.call(obj);
+
+  // var newArr = [].__proto__.slice.call(obj);
+  // var newArr = Array.prototype.slice.call(obj);
+  // console.log(newArr);
+
+
+  // var newArr = [];
+  // for (var i = 0; i < obj.length; i++) {
+  //   newArr.push(obj[i]);
+  // }
+  // console.log(newArr);
+
+
+  // 小结: 学习 call 方法,  fn.call(this指向, x, y, z);
+  // 1. call方法调用函数 和 普通函数调用 的唯一区别, 在于多了一个参数, 第一个参数, 用于指定 this
+  // 2. call方法, 可以用于 函数借调  (借用别人的函数, 借来调用)
+
+  // 别人.方法.call(自己);  将 this 改成 自己, 借用别人的方法
+
+
+</script>
+  
+</body>
+</html>

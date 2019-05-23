@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+  // apply 的功能 和 call 的功能 是一样的, 只是调用的方法不同了
+
+  // 每个函数, 都有一个 call 方法, 可以用于调用函数, 且可以指定 this 指向
+  // 每个函数, 都有一个 apply 方法, 可以用于调用函数, 且可以指定 this 指向
+
+
+  // call的语法:  fn.call(this指向, x, y, z);
+  // apply的语法: fn.apply(this指向, [x, y, z] );  
+  // apply 参数1, 用于指定this的指向
+  // apply 参数2, 接收一个数组, 里面存放着所有传递的参数
+
+
+  // function fn() {
+  //   console.log(this);
+  // }
+  // fn();  // 普通调用,  this: window
+  // fn.call([]); // 通过 call, 来调用, 指定了 this: [];
+  // fn.apply([]); // 通过 apply 来调用, 指定了 this: []
+
+
+
+  // 有参数时, 才会体现区别
+  function add(n1, n2) {
+    console.log(n1 + n2);
+    console.log(this);
+  }
+  add(1, 2);
+
+  // call 和 普通调用的区别, 就在于多了一个参数, 指定this指向
+  add.call([], 1, 2, 3, 4, 5, 6);
+
+  // apply 第二个的参数, 是一个数组, 包含了所有传递的参数
+  var arr = [1, 2, 3, 4, 5, 6];
+  add.apply({name: 'pp'}, arr);
+
+
+  // 如果参数比较少, 一般使用 call, 比较简单
+  // 如果参数比较多, 一般使用 apply, 可以将所有需要传递的参数, 放在一个数组中, 一次性传递
+
+  // fn.call(this指向, x, y, z);
+  // fn.apply(this指向, [x, y, z])
+
+
+</script>
+</body>
+</html>

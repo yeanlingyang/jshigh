@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // js规则:
+  // 1. 任何函数都是由 Function 创建出来的!!!
+  // 2. 任何的原型对象 都是直接由 Object 创建出来的!!!
+
+
+  // 老妈: Person构造函数
+  // 老爹: Person.prototype原型
+  // 实例: 实例p
+  // function Person(name, age) {
+  //   this.name = name;
+  //   this.age = age;
+  // }
+  // var p = new Person('zs', 18);
+  // // p.call();
+  // // p.bind();
+  // console.log(p.hasOwnProperty);
+
+
+  // Function.prototype.__proto__ === Object.prototype   true
+
+  // Function.prototype.__proto__.constructor === Object  true
+
+  // Person.prototype.__proto__ === Object.prototype    true
+
+
+
+
+  // 所有的函数, 都是由 Function 创建出来, 包括他自己, 包括 Object 函数
+
+
+  // A instanceof B; 判断 B.prototype 在不在 A的原型链上
+  // Function的原型链
+  console.log(Function instanceof Function); // true 判断 Function.prototype 在不在 Function 的原型链上
+  console.log(Function instanceof Object);   // true 判断 Object.prototype 在不在 Function 的原型链上
+    
+  // Object的原型链
+  console.log(Object instanceof Function);   //  true   判断 Function.prototype 在不在 Object 的原型链
+  console.log(Object instanceof Object);     //  true   判断 Object.prototype 在不在 Object 的原型链上
+
+
+
+
+
+
+</script>
+  
+</body>
+</html>

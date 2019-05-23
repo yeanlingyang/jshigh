@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 数组: 有着数组的方法是可以使用, 可以遍历
+
+  // 伪数组: 长得很像数组, 但是不是数组, 实际上伪数组是对象, 可以遍历的
+
+  // 伪数组能不能使用数组的方法?? 伪数组不是数组, 不能使用数组的方法
+
+
+  // 伪数组
+  var obj = {
+    0: '张三',
+    1: '李四',
+    2: '王五',
+    3: '赵六',
+    length: 4
+  };
+
+  // for (var i = 0; i < obj.length; i++) {
+  //   console.log(obj[i]);
+  // }
+
+  // 伪数组, 不是数组, 没有数组的方法, 通过 call 借来用用不就好了
+  // obj.pop();
+  // obj.push('田七')
+  // console.log(obj);
+
+  // var arr = [];
+  // arr.pop.call(obj);   // this 指向了 obj
+  // console.log(obj);
+
+
+  // var arr = [];
+  // arr.push.call(obj, '田七');
+  // console.log(obj);
+
+
+  var arr = [1, 2, 3, 4];
+  arr.push.call(obj, '王八');
+
+  console.log(obj);
+
+
+  // [].pop.call(obj);
+  // console.log(obj);
+
+
+
+</script>
+  
+</body>
+</html>

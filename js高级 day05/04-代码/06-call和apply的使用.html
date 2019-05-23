@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 如果参数比较少, 一般使用 call, 比较简单
+  // 如果参数比较多, 一般使用 apply, 可以将所有需要传递的参数, 放在一个数组中, 一次性传递
+
+  // fn.call(this指向, x, y, z);
+  // fn.apply(this指向, [x, y, z]);
+
+
+
+  // 如果参数比较少, 一般使用 call 比较简单
+  // 将所有的参数, 进行字符串拼接, 拼串拼成 100-200-300-400  借用数组的 join
+  // function fn() {
+  //   // console.log(arguments);
+  //   // arguments.join('-') 不行, 自己没有
+
+  //   console.log([].join.call(arguments, '-'));
+
+  //   console.log([].join.apply(arguments, ['-']));
+  // }
+  // fn(100, 200, 300, 400);
+
+
+
+  // 求 3  5  8  11  中的最大值
+
+  // Math.max(3, 5, 8, 11); // 普通调用, 可以求最大值
+
+  // // 使用call 调用 函数, 和普通调用的区别, 多了一个this指向的参数
+  // Math.max.call(null, 3, 5, 8, 11);
+
+  // Math.max.apply(null, [3, 5, 8, 11]);
+
+
+  // 求一个数组的最大值
+  // var arr = [100, 222, 666, 18, 27, 36];
+  // // Math.max(100, 200, 15, 18, 27, 36);
+  // // Math.max.call(null, 100, 200, 15, 18, 27, 36)
+
+  // var max = Math.max.apply(null, arr);
+  // console.log(max);
+
+
+  // 求一个数组的最小值
+  var arr = [33, 55, 22, 17];
+  var min = Math.min.apply(null, arr);  // null 不传, 都表示 this 指向 window
+  console.log(min);
+
+
+</script>
+  
+</body>
+</html>

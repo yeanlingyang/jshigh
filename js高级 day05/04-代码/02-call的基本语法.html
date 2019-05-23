@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 上下文调用模式: 想让this指向谁, 函数执行时, this就指向谁
+
+  // 任何函数, 都可以看成一个特殊的对象, 也可以设置属性和方法, 都有一个 call 方法
+  // call方法也可以用于调用函数, 还可以指定函数执行的 this 的指向
+  // fn.call(this指向)
+
+  // function fn() {
+  //   console.log(this);
+  //   console.log('我执行了');
+  // }
+  // fn();
+
+  // var arr = [];
+  // var obj = { name: 'pp' };
+  // fn.call(obj);   // 如果不传参, 默认this指向window, 如果传递第一个参数, 那么就会指定 this 的指向!!
+
+
+
+  // function add(n1, n2) {
+  //   console.log(n1 + n2);  // 3
+  //   console.log(this);
+  // }
+  // add(1, 2);
+
+  // // 使用call来调用函数 和 普通调用函数的方式, 
+  // // 唯一的区别, 就是多了一个参数, call的第一个参数用于指定 this指向
+  // add.call([], 1, 2);
+
+
+
+  // call 方法: 可以借用别人的函数
+  var zls = {
+    name: '张老三',
+    age: 40,
+    liaomei: function() {
+      console.log('美女你好!! 我是' + this.name + ', 可否共进晚餐');
+    }
+  };
+  zls.liaomei();  // 方法调用模式, this指向调用者
+
+
+  var pp = {
+    name: '鹏鹏',
+    age: 3
+  };
+  zls.liaomei.call(pp);  // 上下文调用模式, 指定了 函数执行时 的 this
+
+
+
+</script>
+  
+</body>
+</html>

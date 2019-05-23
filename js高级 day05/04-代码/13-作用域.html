@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // var num = 22;
+  // function fn() {
+  //   var num = 11;
+  //   num = 33;
+  //   console.log(num);
+  // }
+  // fn();
+  // console.log(num);
+
+
+  // js中的作用域: 词法作用域, 静态作用域, 函数的作用域在函数声明时, 就已经确定好了
+  // 跟调用没有关系
+
+  // 四种调用模式: this指向, 跟声明没关系, 只跟调用有关系
+
+  // var num = 123;
+  // function f1() {
+  //   console.log(num);  // 123
+  // }
+
+  // function f2(){
+  //   var num = 456;
+  //   f1();
+  // }
+  // f2(); // 
+
+
+
+
+  // var num = 123;
+
+  // function f2(){
+  //   var num = 456;
+  //   f1();
+  //   function f1() {
+  //     console.log(num);   // 456
+  //   }
+  // }
+  // f2(); 
+
+  // js中作用域, 静态作用域, 只和声明有关系, 和调用无关, 哪怕不调用, 我们也可以判断对应的作用域
+
+  // var num = 456;
+  // function f2() {
+  //   console.log(num);  // 123
+  // }
+
+
+
+
+  // 作用域链: 每个函数都有自己的作用域, 如果是定义在函数内的函数, 里面的函数又会有自己的作用域 ...
+  // 一层套一层, 就形成一个作用域链
+
+  // 变量的查询规则: 先看自己作用域有没有这个变量, 如果没有, 往外一层一层的就近查找, 如果一直找到
+  // 全局, 都没有找到, 就会报错
+
+  var num = 11;
+  function fn() {
+    var num = 22;
+    console.log(num);
+
+    function fn1() {
+      var num = 33;
+      console.log(num);
+    }
+    fn1();
+  }
+  fn();
+
+
+
+</script>
+  
+</body>
+</html>
