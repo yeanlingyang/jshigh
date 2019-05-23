@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+
+  <textarea cols="100" rows="30"></textarea>
+  <div></div>
+<script>
+
+  // var fn = new Function(str)  // str 会被当成函数体
+  // fn(); 执行函数体, 把str执行了
+
+
+  var text = document.querySelector('textarea');
+  text.onkeyup = function() {
+    // 键盘弹起, 获取 textarea 的 value 值
+    var value = text.value;
+
+    // try 尝试执行某段代码
+    // catch 抓取, 可以抓取到 try 执行中的错误
+    try {
+      // var fn = new Function(value);
+      // fn();
+      eval(value);
+    }
+    catch {
+      // catch可以抓取到try执行时的错误, 可以进行处理, 也可以不处理
+      // console.log(11111);
+    }
+  };
+  
+  
+</script>
+  
+</body>
+</html>

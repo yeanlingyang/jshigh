@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // 任何一个函数, 都有一个对象, arguments, 是一个伪数组, 用于收集所有传递的参数 (实参)
+  
+  // function fn(a, b) {
+  //   // console.log(a + b);
+  //   // console.log(arguments);
+  //   console.log(arguments[0] + arguments[1]);
+  // }
+  // fn( 110, 222, 333, 123 );  
+
+
+  // arguments 一般用于参数个数不确定的情况
+  // Math.max(11, 3);
+  // Math.max(11, 333, 22);
+  // Math.max(11, 333, 22, 444);
+
+
+  // 需求: 实现一个getMax方法, 可以求任意数量的数字的最大值
+  function getMax() {
+    console.log(arguments);
+    // 会先假定一个最大值
+    var max = arguments[0];
+    for (var i = 1; i < arguments.length; i++) {
+      if (arguments[i] > max) {
+        // 更新最大值
+        max = arguments[i];
+      }
+    }
+    return max;
+  }
+  // getMax(1);
+  // getMax(1, 2);
+  // getMax(1, 2, 3);
+  console.log(getMax(111, 212, 13, 888, 444));
+  
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 函数内的this指向谁, 只跟怎么调用有关系, 跟函数定义在什么地方, 没有任何关系!!!
+  
+  // 1. 函数调用模式:  fn()   this指向window
+  // function fn() {
+  //   console.log(this);
+  // }
+  // fn();  // 函数调用模式, 指向window
+
+  // 2. 方法调用模式:  xx.fn()  this指向调用者, 谁调用指向谁
+  // var obj = {
+  //   fn : function() {
+  //     console.log(this);
+  //   }
+  // };
+  // obj.fn();  // 方法调用模式, this指向调用者
+
+
+  // var obj = {
+  //   fn : function() {
+  //     console.log(this);
+  //   }
+  // };
+  // var fn = obj.fn;
+  // fn(); // 函数调用模式, 指向 window
+
+
+  // 小测试
+  // var obj = {
+  //   sayHi: function() {
+  //     console.log(this);
+  //   }
+  // };
+  // var fn = obj.sayHi;
+  // fn();  // 函数调用模式, 指向 window
+
+
+  var age = 10;  // var age = 10;  window.age = 10;
+  function fn() {
+    console.log(this.age);
+  }
+  var obj = {
+    age: 20,
+    sayHi: fn
+  };
+  obj.sayHi(); // 方法调用模式, 执行时, this指向调用者 obj   20
+  fn();  // 函数调用模式, 执行时, this指向window  10
+  
+  
+</script>
+  
+</body>
+</html>

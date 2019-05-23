@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 继承: 拿来主义, 自己没有的属性和方法, 别人有, 拿过来用, 就实现了继承
+  var obj1 = {
+    name: 'zs',
+    age: 18
+  };
+
+  var obj2 = {
+    car: '玛莎拉蒂',
+    money: 100000
+  };
+
+  obj1.__proto__ = obj2;  //认个干爹
+
+  console.log(obj1.car);
+  
+</script>
+  
+</body>
+</html>

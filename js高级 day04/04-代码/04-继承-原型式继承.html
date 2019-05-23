@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+  // 原型式继承(原型链继承), 就是利用原型的特性, 以及属性访问原则实现的继承
+  // 1. 直接给原型, 添加属性和方法, 将来所有的实例, 都可以访问到
+  // 2. 原型替换, 换爹, 实例.__proto__ 去更换原型, 不推荐
+  //             构造函数换原型, Person.prototype = { ... } 将来所有创建出来的实例, 都可以访问原型上的方法
+  //             注意: 在替换原型时, 一般要指定 constructor 
+
+  // Object.prototype.money = 1000000;
+  // var obj = {
+  //   name: 'zs',
+  //   age: 18
+  // };
+  // console.log(obj.money);
+
+  // var ww = {
+  //   money: 10000,
+  //   car: '玛莎拉蒂'
+  // }
+  // var obj = {
+  //   name: 'zs',
+  //   age: 18
+  // };
+  // obj.__proto__ = ww;
+  // console.log(obj.car);
+
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  Person.prototype = {
+    money: 100000,
+    car: '玛莎拉蒂',
+    constructor: Person
+  };
+
+  var p1 = new Person('zs', 18);
+  var p2 = new Person('ls', 20);
+
+  console.log(p1.money);
+  console.log(p2.money);
+  
+  
+</script>
+</body>
+</html>

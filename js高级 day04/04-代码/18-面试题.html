@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    // 考了: 1 预解析  2. 原型  3. this 指向
+    // 预解析: 提升函数声明 和 变量的声明
+    function Foo() {
+      getName = function () {
+        console.log(1);
+      }
+      return this;
+    }
+    function getName() {
+      console.log(5);
+    }
+    // 给老妈加了一个属性, 属性名 getName
+    Foo.getName = function () {
+      console.log(2);
+    }
+    // 给老爹, 给原型加了一个属性, 属性名 getName
+    Foo.prototype.getName = function () {
+      console.log(3);
+    }
+    // 全局的 getName 已经是 console.log(4);
+    getName = function () {
+      console.log(4);
+    }
+
+    Foo.getName();   // 2
+    getName();   // 4
+    Foo().getName(); // 1 Foo()先执行, 函数调用模式, this指向 window, 将全局的 getName 改成了打印1
+    getName(); // 1
+
+    // new 会和最近的 函数名 () 结合, 是一个整体, new fn();
+    new Foo.getName(); // 2 先看Foo.getName, 将这个函数当成了构造函数来new, 执行构造函数, 打印 2
+
+    new Foo().getName(); // 3  先执行 new Foo(), 创建实例foo, 实例foo.getName() 自己没有, 找原型的getName 
+
+    new new Foo().getName(); // 3  先执行 new Foo(), 创建实例foo, new foo.getName()  执行了一下构造函数, 打印 3
+
+
+    // new:
+    // 1. 创建一个新的对象
+    // 2. 让构造函数的this指向新创建的对象
+    // 3. 执行构造函数
+    // 4. 返回这个对象
+
+  </script>
+
+</body>
+
+</html>

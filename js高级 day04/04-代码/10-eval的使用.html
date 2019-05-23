@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // 利用 new Function() 可以执行字符串 
+  // var str = 'var a = 1; var b = 2; console.log(a + b)';
+  // var fn = new Function(str);
+  // fn();
+
+  // function fn () {
+  //   var a = 1; 
+  //   var b = 2; 
+  //   console.log(a + b);
+  // }
+  // fn();
+  // console.log(a);
+
+
+
+  // eval(str) 也可以执行字符串 非常的强大, 但是不用  (风险性太大)  造成了全局变量的污染
+  // var a = 100;
+  // var str = 'var a = 1; var b = 2; console.log(a + b)';
+  // eval(str); 
+  // console.log(a);
+  // console.log(b);
+
+
+  var aa = 200;
+  eval('aa = 40');  // aa = 40
+  console.log(aa);
+  
+  
+</script>
+  
+</body>
+</html>

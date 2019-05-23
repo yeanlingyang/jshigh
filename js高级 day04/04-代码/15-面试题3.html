@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    // 数组 从某种意义上来说, 也是一种特殊的对象
+
+    //题目三：
+    // var length = 10;
+    // function fn() {
+    //   console.log(this.length);
+    // }
+    // var arr = [fn, "222"];
+    // fn();  // 10  函数调用模式, this指向window
+    // arr[0](); // 2  可以把数组当成一个对象, 访问0属性, 就是方法, 方法调用模式, 指向 arr
+
+
+
+    // var length = 10;
+    // function fn() {
+    //   console.log(this.length);
+    // }
+    // var obj = {
+    //   length: 5,
+    //   fn: function() {
+    //     console.log(this.length);
+    //   }
+    // };
+    // var arr = [fn, obj.fn, 100, 10];
+
+    // fn();  // 10  
+    // obj.fn();  // 5
+    // arr[0]();  // 4 指向 arr
+    // arr[1]();  // 4 指向 arr
+
+
+
+    // function fn() {
+    //   console.log(this);
+    // }
+
+    // // 函数的this指向谁只跟调用有关系
+    // fn(); // window
+
+    // var obj = {
+    //   fn: fn
+    // };
+    // obj.fn();  // 方法调用模式, this 指向调用者, obj
+
+
+
+
+
+  </script>
+</body>
+
+</html>

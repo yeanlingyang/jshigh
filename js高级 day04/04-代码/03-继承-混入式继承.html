@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // 继承: 一个对象没有属性和方法, 但是另一个对象有, 直接拿过来, 就是实现了继承;
+  
+  var zs = {
+    name: '张三',
+    age: 30,
+    // 你给我一个对象, 我就可以将对象中的所有属性和方法, 添加到自己身上
+    extend: function(obj) {
+      for (var k in obj) {
+        this[ k ] = obj[ k ];
+      }
+    }
+  };
+
+  var ls = {
+    car: '玛莎拉蒂',
+    money: 1000000
+  };
+
+  var ww = {
+    girlFriend: '翠花',
+    mobile: '动感小单车'
+  };
+
+  zs.extend(ls);   // xx.fn()  谁调用, this就指向谁
+  zs.extend(ww);
+
+  zs.extend({
+    sayHi: function() {
+      console.log('哈哈')
+    }
+  });
+  console.log(zs);
+
+
+
+  // 混入式继承: 将另一个对象的全部属性和方法添加到自己的身上  (混入到自己身体)
+  // for (var k in ls) {
+  //   zs[ k ] = ls [ k ];
+  // }
+  // for (var k in ww) {
+  //   zs[ k ] = ww[ k ];
+  // }
+
+  // console.log(zs);
+  
+  
+</script>
+  
+</body>
+</html>

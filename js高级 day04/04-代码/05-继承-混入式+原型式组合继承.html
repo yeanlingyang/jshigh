@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // 1. 混入式, 将另一个对象的属性和方法 通过 extend 方法, 添加到自己身上
+  // 2. 原型式继承, 利用了原型的特征, 以及属性访问原则, 实现的继承
+  
+  
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  // 这个方法, 调用时, 可以将其他的对象的属性和方法添加到自己身上
+  Person.prototype.extend = function(obj) {
+    for (var k in obj) {
+      this[k] = obj[k];
+    }
+  };
+
+  var ww = {
+    money: 1000000,
+    car: '劳斯莱斯'
+  };
+
+  var wer = {
+    sing: function() { 
+      console.log('唱歌');
+    },
+    dance: function() {
+      console.log('动词打次');
+    }
+  };
+
+  Person.prototype.extend(ww);  // this指向原型
+
+  Person.prototype.extend(wer); // 将wer里面的所有属性, 混入添加到 Person.protoype 原型中
+
+
+  // 利用 extend 方法, 可以很便捷的给原型去扩展方法
+  // 基础的打招呼的方法
+  Person.prototype.extend({
+    sayHi: function() {
+      console.log('大家好, 才是真的好');
+    },
+    sayHello: function() {
+      console.log('你好');
+    }
+  });
+
+  // 常用的技能
+  Person.prototype.extend({
+    run: function() {
+      console.log('跑步');
+    },
+    read: function() {
+      console.log('会读书');
+    }
+  });
+
+
+  var p = new Person('zs', 18);
+  var p2 = new Person('ls', 20);
+  console.log(p);
+
+  // console.log(p.car);
+  // console.log(p2.car);
+  // p.sing();
+  // p.dance();
+
+  // 好处:
+  // 可以不用更换原型, 直接利用extend方法, 给自己的原型扩展属性和方法即可
+  // 所有的实例, 都可以访问到原型上的方法!!!
+
+  
+</script>
+  
+</body>
+</html>

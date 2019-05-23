@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  
+  // 1. 函数声明式
+  // function fn(a, b) {
+  //   console.log(a + b)
+  // } 
+  // fn(1, 2); 
+
+
+  // 2. 函数表达式
+  // var fn = function() {
+  //    alert(123);
+  // };
+  // fn();
+
+
+  // 3. 构造函数的方式  new Function(..)
+  //    参数: 都是字符串类型
+  //    最后一个参数: 是函数体
+  //    前面其他所有的参数: 是定义的形参
+  // var fn = new Function();
+  // fn();
+
+  // var fn = new Function('alert(123)');  // 只有一个参数, 就会当成函数体
+  // fn();
+
+  // var fn = new Function( 'a', 'b', 'console.log(a + b)');
+  // fn(1, 2);
+
+  // var fn = new Function(str); 作用: 可以直接执行字符串!!!
+  // fn();
+
+
+  // var str = 'var a = 1; var b = 2; console.log(a + b);';
+  // var fn = new Function(str);               // function fn() { var a = 1; var b = 2; console.log(a + b); }
+  // fn();
+</script>
+  
+</body>
+</html>

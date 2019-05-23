@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    // 看函数的this指向, 只看怎么调用的, 不看怎么定义的
+    // 1. 函数调用模式,  fn()  this指向window
+    // 2. 方法调用模式,  obj.fn()  this指向调用者, 谁调用, 指向谁
+    // 3. 构造函数调用模式, new Person(); this指向创建的实例
+
+    // 补充: 
+    // (1) 定时器中的 this, 指向 window
+    // setTimeout(function() {
+    //   console.log(this)
+    // }, 2000);
+
+    // (2) 事件处理函数中, 浏览器让 this 指向了 事件源
+    // btn.onclick = function() {
+    //   console.log(this)
+    // };
+
+    // function fn() {
+    //   console.log(this);
+    // }
+    // fn(); // window
+    // var obj = {
+    //   fn: fn
+    // };
+    // obj.fn(); // this obj
+
+
+    // function Person() {
+    //   console.log(this);
+    // }
+    // var p = new Person(); 
+
+    // function Person() {
+    //   console.log(this);
+    // }
+    // var p = new Person();  // 指向新创建出来的实例
+    // Person();  // 指向window
+
+
+
+
+    // var name = 'zs';  // ls
+    // var age = 20;   // 30
+    // function Person(name, age) {
+    //   this.name = name;  // window.name = 'ls'
+    //   this.age = age;    // window.age = 30
+    // }
+    // var p1 = Person('ls', 30);  // 函数调用模式, this指向window
+    // console.log(name); // ls
+    // console.log(age);  // 30
+    // console.log(p1.name); // undefined.name 报错
+    // console.log(p1.age);  // 
+
+
+  </script>
+
+</body>
+
+</html>

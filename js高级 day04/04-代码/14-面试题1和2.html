@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+
+    //题目一：
+    // var age = 38;
+    // var obj = {
+    //   age: 18,
+    //   getAge: function () {
+    //     console.log(this.age);  // 38 
+    //   }
+    // }
+
+    // var f = obj.getAge;
+    // f(); // this指向window, 函数调用模式  38
+
+    // obj.getAge(); // this指向obj, 方法调用模式  18
+
+
+
+
+    //题目二
+    // var age = 38;
+    // var obj = {
+    //   age: 18,
+    //   getAge: function () {
+    //     console.log(this); // obj
+    //     console.log(this.age); // 18
+    //     function foo() {
+    //       console.log(this.age); // 38
+    //     }
+    //     foo(); // 函数调用模式, this指向window
+    //   }
+    // }
+    // obj.getAge(); // 方法调用模式, this指向obj
+
+    // obj['getAge']();   // 方法调用模式,   this指向obj
+
+
+
+
+
+  </script>
+</body>
+
+</html>
