@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+    #map {
+      width: 800px;
+      height: 600px;
+      background-color: #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+  
+  </style>
+</head>
+<body>
+
+
+<button>开始游戏</button>
+<div id="map">
+
+</div>
+
+<script src="./food.js"></script>
+<script>
+
+  var map = document.querySelector('#map');
+
+  for (var i = 0; i < 100; i++) {
+    var f = new Food({
+      width: 20,
+      height: 20,
+      bgColor: getColor()
+    });
+    f.render(map)
+  }
+
+  function getColor() {
+    var colorA = parseInt( Math.random() * 256 );
+    var colorB = parseInt( Math.random() * 256 );
+    var colorC = parseInt( Math.random() * 256 );
+
+    return 'rgb('+ colorA +', '+ colorB +', ' + colorC + ')';
+  }
+
+
+
+</script>
+  
+</body>
+</html>

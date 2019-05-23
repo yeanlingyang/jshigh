@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+
+  // A instanceof B,  判断 A 是否是 B 的实例, B 构造函数
+
+  // A instanceof B,  判断 B函数.prototype 在不在 A 的原型链上
+
+  function Person(){
+
+  }
+
+  var p = new  Person();
+  console.log(p instanceof Person); // true 判断 Person.prototype(原型对象) 在不在 p 的原型链上
+
+  //需要画图, 对象复杂类型的赋值, 赋值的是地址
+  Person.prototype = {
+    constructor: Person
+  };
+  var p1 = new Person();
+  console.log(p  instanceof Person);  // false  判断 Person.prototype(老王) 在不在 p 的原型链上
+  console.log(p1 instanceof Person); // true   判断 Person.prototype(老王) 在不在 p1 的原型链上
+
+
+</script>
+</body>
+</html>

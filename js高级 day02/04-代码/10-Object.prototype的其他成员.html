@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // Object.prototype的其他成员
+  // console.log(Object.prototype);
+
+  // A.isPrototypeOf(B) : 判断 A 是不是 B 的原型    
+
+  // function Person(name, age) {
+  //   this.name = name;
+  //   this.age = age;
+  // }
+  // var p = new Person();
+
+  console.log(Person.isPrototypeOf(p));   // false
+  console.log(Person.prototype.isPrototypeOf(p));   // true
+  console.log(Object.prototype.isPrototypeOf(p));   // true  (老祖宗也会返回true)
+
+
+
+  // 对象.propertyIsEnumerable('属性名')  判断属性是否可以遍历 (可枚举)
+  // for in 遍历时, 除了自己的可以遍历, 原型上的属性也是可以遍历的
+  
+  // Object.prototype.money = 10000;
+  // var obj = {
+  //   name: 'zs',
+  //   age: 18
+  // };
+  // console.log(obj);
+
+  // console.log(obj.propertyIsEnumerable('name'));  // true
+  // console.log(obj.propertyIsEnumerable('age'));  // true
+  // console.log(obj.propertyIsEnumerable('__proto__'));  // false
+
+  // console.log(Object.prototype.propertyIsEnumerable('money'));  // true
+  // console.log(Object.prototype.propertyIsEnumerable('constructor'));  // false
+
+  /* 
+    Object.prototype上的成员:
+      对象.hasOwnProperty('属性名') (重点掌握)  判断属性是否是对象自己的, 而不是继承的
+      作用: 可以遍历时, 只遍历自身的属性
+
+      A.isPrototypeOf(B)  看 A 是否是 B 的原型
+      propertyIsEnumerable
+      toString()
+      valueOf()
+  */
+  
+
+
+
+</script>
+
+
+  
+</body>
+</html>

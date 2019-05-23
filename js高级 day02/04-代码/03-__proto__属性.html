@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 1. 一个对象, 可以通过 __proto__ 属性, 访问对应的原型  (找他爹)
+  // 2. 不推荐直接修改, 或者操作 __ 开头的属性
+  //    要给原型添加属性或者方法, 通过 构造函数.prototype 来加, 集中管理 便于维护
+
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  Person.prototype.sayHi = function() {
+    console.log(111);
+  };
+
+  var p1 = new Person('zs', 16);
+  var p2 = new Person('ls', 20);
+
+  // console.log(p1);
+  // console.log(p1.__proto__ === Person.prototype);  // 通过两种方式, 找到原型
+  // console.log(p1.__proto__.constructor === Person); // true
+
+  // 不推荐
+  p1.__proto__.run = function() {
+    console.log('会跑');
+  };
+  p1.run();
+  p2.run();
+
+</script>
+  
+</body>
+</html>

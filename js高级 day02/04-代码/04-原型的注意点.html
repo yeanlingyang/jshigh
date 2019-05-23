@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div></div>
+
+<script>
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  Person.prototype.car = '摩托罗拉';
+  Person.money = 1000;
+
+  var p = new Person('zs', 18);
+
+  console.log(p.name); // zs
+  console.log(p.age);  // 18
+  console.log(p.car);  // 摩托罗拉
+  console.log(p.money); // undefined;
+
+  // 原型的注意点:
+  // 添加给构造函数的成员, 实例访问不到的  (给老妈加, 拿不到)
+  // 添加到原型的成员, 实例可以访问到的!!! (给老爸加, 可以拿到的)
+
+  // 研究原型的目的:
+  // 就是为了看一个对象, 能够访问那些成员
+
+
+  // var div = document.querySelector('div');
+  // // div.addEventListener
+  // console.dir(div);
+
+
+
+</script>
+  
+</body>
+</html>

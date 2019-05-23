@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+    #map {
+      width: 800px;
+      height: 600px;
+      background-color: #ccc;
+      margin: 0 auto;
+      position: relative;
+    }
+  
+  </style>
+</head>
+<body>
+
+
+<button>开始游戏</button>
+<div id="map">
+
+</div>
+
+<script>
+
+  // 食物对象
+  // 属性: 宽高 背景色 坐标
+  // 方法: 渲染
+
+  // 优化1: 每次都传全参数, 太麻烦, 可以设置默认值
+  // 优化2: 如果参数是后面的要传, 但是前面的参数不能不传的, 很麻烦, 可以传入一个对象来配置
+  // 优化3: 如果不传, 我也希望默认options是一个空对象
+
+  function Food(options) {
+    options = options || {};
+    this.width = options.width || 20;
+    this.height = options.height || 20;
+    this.bgColor = options.bgColor || 'blue';
+
+    // 将来食物是需要, 随机位置的
+    this.x = options.x || 0;
+    this.y = options.y || 0;
+  }
+
+  // var f = new Food(20, 20, 'blue', 0, 0);
+  // var f = new Food();
+  // var f = new Food(null, null, 'green');
+
+  var f = new Food({
+    width: 40,
+    height: 40
+  });
+  var f2 = new Food();
+  console.log(f);
+  
+
+</script>
+  
+</body>
+</html>

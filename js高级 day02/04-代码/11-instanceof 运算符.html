@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+  // typeof 返回简单类型的具体类型, 对于复杂类型对象等, 都是返回 object,  对于函数 function
+  // 使用typeof无法区分具体的对象类型!!! Person 类型  Array 类型, 都返回 object
+
+  // instanceof
+  // instance实例
+  // 语法: A instanceof B   判断 A 是否是 B 的实例  (需要猜)
+  // 进阶原理: A instanceof B, 判断 B.prototype
+
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  var p = new Person();
+  var arr = new Array();
+
+  // console.log(typeof p); // object
+  // console.log(typeof arr); // object
+
+  console.log(arr instanceof Array); // true   判断 Array.prototype 在不在 arr 的原型链上
+  console.log(arr instanceof Object); // true  判断 Object.prototype 在不在 arr 的原型链上
+
+  // console.log(arr instanceof Person); // false
+
+
+  // console.log(arr.__proto__.constructor.name);  // Array
+  // console.log(arr.constructor.name);  // Array
+  // console.log(p.constructor.name);  // Person
+
+
+
+
+
+</script>
+  
+</body>
+</html>

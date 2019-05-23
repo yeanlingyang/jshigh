@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // 访问对象的属性  obj.属性名   obj['属性名']
+
+  // 属性搜索原则:
+  // 1. 如果自己有这个属性, 就访问自己的
+  // 2. 如果自己没有这个属性, 会到原型中找, 如果找到, 不找了, 直接返回
+  // 3. 如果原型中也没有, 会到原型的原型中找....
+  // 4. 一直找到 Object.prototype, 如果老祖宗也没有, 返回 undefined
+  // 小结: 自己有就访问自己的, 自己没有, 去原型链中就近查找
+
+  // Object.prototype.gender = '男';
+
+  // var obj = {
+  //   name: 'pp',
+  //   age: 18
+  // };
+  // console.log(obj.name); // pp
+  // console.log(obj.age); // 18
+  // console.log(obj.gender); // 男
+
+
+
+  // 设置属性:
+  // 如果自己有这个属性, 直接修改赋值
+  // 如果自己没有这个属性, 给自己添加一个新属性  (不会改到原型)
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  Person.prototype.money = 10000;
+
+  var p1 = new Person('zs', 18);
+  var p2 = new Person('ls', 20);
+
+  p1.money = 10;  // 给自己添加一个money属性, 并赋值了
+
+  console.log(p1.money); // 10
+  console.log(p2.money); // 10000
+
+
+</script>
+  
+</body>
+</html>

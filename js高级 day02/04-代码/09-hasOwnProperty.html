@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+<script>
+
+  // 任何对象都可以使用 hasOwnProperty
+  // 语法: 对象.hasOwnProperty('属性名')  判断属性是否是自己的, 而不是原型的(不是继承来的)
+
+  // Object.prototype.money = 2000;
+  // var obj = {
+  //   name: 'zs',
+  //   age: 18
+  // };
+  // console.log(obj.hasOwnProperty('name')); // true
+  // console.log(obj.hasOwnProperty('money')); // false
+  // console.log(obj.hasOwnProperty('desc')); // false
+
+
+  // 遍历一个对象, for in遍历, 不仅自己的属性可以遍历到, 原型上的属性也会遍历到
+
+  // 需求: 只打印自己的属性, 原型上不打印
+  // Object.prototype.money = 2000;
+  // var obj = {
+  //   name: 'zs',
+  //   age: 18
+  // };
+  // for (var k in obj) {
+  //   // 对于 constructor 等浏览器内置的属性, 被浏览器进行了处理
+  //   // 不会被 for in 遍历出来
+  //   if (obj.hasOwnProperty(k)) {
+  //     // true 是自己的, 打印
+  //     console.log(k);
+  //   }
+  // }
+  // console.log(obj);
+
+
+  // 对象.hasOwnProperty('属性名')  判断属性是否是自己的, 而不是原型的  (只有这个属性是自己的, 才返回true)
+
+
+  // in操作符: 判断属性是否可以被对象所访问  (只要能够访问到这个属性, 就返回true)
+  // 语法: '属性名' in 对象
+
+  Object.prototype.car = '玛莎拉蒂';
+  var obj = {
+    name: 'zs',
+    age: 18
+  };
+  console.log('name' in obj); // true
+  console.log('age' in obj);  // true
+  console.log('car' in obj);  // true
+  console.log('constructor' in obj);  // true
+  console.log('gender' in obj);  // false
+
+
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+
+  // 原型链: 一个对象有自己的原型, 而原型也有自己的原型
+  // 一环扣一环, 这样的链式结构, 我们称之为原型链
+
+
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  var p = new Person();
+
+  // console.log(p.__proto__.__proto__);
+
+  console.log(p.__proto__.__proto__ === Object.prototype); // true
+  console.log(p.__proto__.__proto__.constructor === Object);  // true
+
+
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<script>
+
+  // js数据类型
+  // 值类型: 存储在变量中, 存的值本身
+  // 引用类型: 存储在变量中, 存的是内存地址
+  // js里面是没有特别明确的堆和栈的概念, 而且js的实现, 也不需要堆和栈的概念
+
+  // 如果发现面试题中出现:  堆和栈 (只是将java中概念, 拿过来类比了)
+  // java中堆内存 和 栈内存
+  // 1. 所有的简单数据类型, 存在 栈 中
+  // 2. 所有的复杂数据类型, 存在 堆 中    真实存在变量中的, 也是地址
+
+  var num = 11;  // 存在栈中
+
+  var obj = {
+    name: 'zs',
+    age: 18
+  };  // obj这个变量是在栈中, 存了一个地址,  指向了一个对象 (对象存在堆中的)
+
+
+</script>
+  
+</body>
+</html>
